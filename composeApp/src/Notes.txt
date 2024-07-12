@@ -1,0 +1,82 @@
+### 0. Navigate back with result with Jetpack Compose
+**Description:** If you want to navigate from a screen to another screen pick the data you want like primitive data or you own custom object and return with the result in your previous screen, you came to right place.
+**Contenu:**
+To get the result of another screen we need to use SavedStateHandle class that is a key-value map
+that allows you to write and retrieve data to and from the saved state through the set() and get() methods.
+
+Data in SavedStateHandle is saved and restored as a Bundle and you can check all the supported formats here.
+The second step we need to do is add kotlin-parcelize plugin, that will help us implement Parcelable avoiding all the boilerplate involved.
+Why we need this you can be wondering, the reason is because if you need to retrieve your custom object as result you need to serialize you object first,
+we have 2 options to do it, using Serializable or Parcelable, summarising Serializable is easier to implement, but it’s slower than Parcealable.
+Using kotlin-parcelize plugin will make our implementation easy, so I choose it, add the kotlin-parcelize
+plugin on the top of your app project level build.gradle (the same file you use before to add navigation dependency)
+
+### 1. Introduction à Kotlin Multiplatform
+**Description:** Présentation générale de Kotlin Multiplatform, ses avantages, et ses cas d'utilisation.
+**Contenu:**
+Kotlin Multiplatform permet de partager du code entre plusieurs plateformes, y compris Android, iOS, le web et le bureau. Ce framework offre la possibilité de réutiliser la logique métier, réduisant ainsi le temps de développement et les coûts de maintenance.
+
+L'un des principaux avantages de Kotlin Multiplatform est la capacité de conserver des interfaces utilisateur natives tout en partageant une grande partie de la logique de l'application. Cela permet d'avoir des applications performantes et réactives sur chaque plateforme. Un exemple de projet simple montrera comment initialiser et configurer un projet Kotlin Multiplatform, illustrant les concepts de base et les avantages de cette approche.
+
+### 2. Configuration de l'environnement de développement Kotlin Multiplatform
+**Description:** Guide étape par étape pour installer et configurer l'environnement de développement pour Kotlin Multiplatform.
+**Contenu:**
+Pour commencer avec Kotlin Multiplatform, il est essentiel d'avoir un environnement de développement bien configuré. Nous verrons comment installer Kotlin et IntelliJ IDEA, le principal IDE recommandé pour le développement Kotlin. Nous aborderons également l'installation et la configuration du plugin Kotlin Multiplatform.
+
+La création d'un projet multiplateforme sera expliquée en détail, avec une analyse de la structure du projet, y compris les modules communs et spécifiques à chaque plateforme. Nous décrirons comment organiser le code pour maximiser la réutilisabilité et minimiser les redondances.
+
+### 3. Partage de code entre différentes plateformes avec Kotlin Multiplatform
+**Description:** Techniques et meilleures pratiques pour partager du code entre Android, iOS, et d'autres plateformes.
+**Contenu:**
+Kotlin Multiplatform utilise les concepts d'expect/actual pour permettre le partage de code tout en permettant des implémentations spécifiques à chaque plateforme. Nous expliquerons comment créer des modules communs qui contiennent la logique partagée et des modules spécifiques pour chaque plateforme.
+
+Des exemples pratiques illustreront comment structurer votre code pour maximiser le partage tout en respectant les particularités de chaque plateforme. Nous montrerons également comment gérer les dépendances multiplateformes et utiliser les bibliothèques courantes pour simplifier le développement.
+
+### 4. Gestion des dépendances dans les projets Kotlin Multiplatform
+**Description:** Comment gérer les dépendances dans un projet Kotlin Multiplatform.
+**Contenu:**
+La gestion des dépendances dans un projet Kotlin Multiplatform est facilitée par Gradle, qui permet de définir des dépendances communes et spécifiques à chaque plateforme. Nous expliquerons comment configurer votre fichier Gradle pour inclure des dépendances multiplateformes et gérer les versions.
+
+Nous examinerons les dépendances courantes utilisées dans les projets multiplateformes et comment les intégrer correctement. Des exemples pratiques montreront comment ajouter et configurer des bibliothèques comme Ktor pour les appels réseau et SQLDelight pour la gestion des bases de données.
+
+### 5. Interaction avec le code natif en Kotlin Multiplatform
+**Description:** Appel de code natif depuis Kotlin Multiplatform pour accéder aux API spécifiques de la plateforme.
+**Contenu:**
+Kotlin Multiplatform permet d'appeler du code natif, ce qui est crucial pour accéder aux API spécifiques à chaque plateforme. Nous verrons comment utiliser JNI (Java Native Interface) pour interagir avec du code natif sur Android et CocoaPods pour intégrer des bibliothèques iOS.
+
+Nous présenterons des exemples pratiques montrant comment appeler des API natives depuis un code Kotlin commun, illustrant les concepts avec des cas d'utilisation concrets comme l'accès aux capteurs de l'appareil ou aux services de localisation. Ces techniques permettent d'exploiter pleinement les capacités de chaque plateforme tout en maintenant une base de code commune.
+
+### 6. Test unitaire et d'intégration en Kotlin Multiplatform
+**Description:** Approches pour tester le code partagé et le code spécifique à la plateforme.
+**Contenu:**
+Les tests sont essentiels pour assurer la qualité du code dans les projets multiplateformes. Nous expliquerons comment configurer et exécuter des tests unitaires pour le code partagé, en utilisant des frameworks de test multiplateformes comme KotlinTest et MockK.
+
+Les tests d'intégration seront abordés avec des exemples de configuration pour Android et iOS, y compris l'utilisation d'outils comme Espresso et XCTest. Nous verrons également comment mettre en place des pipelines de tests automatisés pour assurer la stabilité et la qualité continue du code à travers toutes les plateformes.
+
+### 7. Gestion de la base de données en Kotlin Multiplatform
+**Description:** Gestion des bases de données dans les applications multiplateformes avec Kotlin Multiplatform.
+**Contenu:**
+Pour gérer les bases de données dans les applications multiplateformes, nous utiliserons SQLDelight, une bibliothèque multiplateforme qui permet de générer du code Kotlin à partir de schémas SQL. Nous expliquerons comment configurer SQLDelight pour partager une base de données entre Android et iOS.
+
+Nous aborderons les techniques de synchronisation des données entre les plateformes et les meilleures pratiques pour assurer la cohérence et la performance des opérations de base de données. Un exemple pratique illustrera la gestion des opérations CRUD (Create, Read, Update, Delete) dans un contexte multiplateforme.
+
+### 8. UI et UX en Kotlin Multiplatform
+**Description:** Développement d'interfaces utilisateur multiplateformes tout en respectant les spécificités de chaque plateforme.
+**Contenu:**
+Le développement d'interfaces utilisateur multiplateformes nécessite une approche équilibrée entre partage de code et personnalisation pour chaque plateforme. Nous présenterons Kotlin/Native et Jetpack Compose Multiplatform pour créer des interfaces partagées.
+
+Nous montrerons comment intégrer ces outils avec SwiftUI et UIKit pour iOS, permettant de tirer parti des composants natifs tout en partageant la logique de l'interface. Des exemples pratiques démontreront comment créer des écrans interactifs et réactifs, adaptés à chaque plateforme.
+
+### 9. Optimisation des performances en Kotlin Multiplatform
+**Description:** Techniques pour optimiser les performances des applications multiplateformes.
+**Contenu:**
+L'optimisation des performances est cruciale pour garantir une expérience utilisateur fluide. Nous explorerons la gestion de la mémoire et des threads dans les applications Kotlin Multiplatform, en mettant l'accent sur les meilleures pratiques pour minimiser l'utilisation des ressources.
+
+Nous aborderons également l'optimisation des appels réseau et l'utilisation de techniques de mise en cache pour améliorer les performances. Des outils de profiling et de debugging seront présentés pour identifier et résoudre les goulots d'étranglement dans le code. Des exemples concrets illustreront ces concepts avec des cas d'utilisation réels.
+
+### 10. Déploiement et maintenance des applications Kotlin Multiplatform
+**Description:** Processus de déploiement et de maintenance des applications développées avec Kotlin Multiplatform.
+**Contenu:**
+Le déploiement et la maintenance des applications Kotlin Multiplatform nécessitent une approche structurée. Nous verrons comment compiler et construire des applications pour différentes plateformes, y compris les configurations spécifiques pour Android et iOS.
+
+La publication des applications sur Google Play et l'App Store sera expliquée, avec des étapes détaillées pour préparer les applications pour le déploiement. Nous aborderons également les stratégies de mise à jour et de maintenance continue, ainsi que les pratiques de déploiement continu (CI/CD) pour assurer un flux de développement fluide et efficace.

@@ -1,0 +1,100 @@
+[versions]
+agp = "8.2.0"
+android-compileSdk = "34"
+android-minSdk = "24"
+android-targetSdk = "34"
+androidx-activityCompose = "1.9.0"
+androidx-appcompat = "1.7.0"
+androidx-constraintlayout = "2.1.4"
+androidx-core-ktx = "1.13.1"
+androidx-espresso-core = "3.6.0"
+androidx-material = "1.12.0"
+androidx-test-junit = "1.2.0"
+compose-plugin = "1.6.11"
+junit = "4.13.2"
+kotlin = "2.0.0"
+
+#
+composeBom = "2023.08.00"
+composeAnimation = "1.7.0-alpha07"
+
+# Material3
+material3 = "1.2.1"
+material3-window = "1.2.1"
+material3-adaptive-navigation = "1.0.0-beta04"
+
+# DateTime
+kotlinx-datetime = "0.6.0"
+
+# Room
+room = "2.7.0-alpha04"
+ksp = "2.0.0-1.0.21"
+sqlite = "2.5.0-SNAPSHOT"
+
+# ViewModel
+view-model = "2.8.0"
+
+# Navigation
+navigation = "2.7.0-alpha07"
+voyagerVersion = "1.1.0-beta02"
+
+# Injection
+kodeinDiCompose = "7.22.0"
+
+# Google-Font
+google-font = "1.6.8"
+
+[libraries]
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
+androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-junit" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidx-espresso-core" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
+androidx-material = { group = "androidx.compose.material", name = "material", version.ref = "androidx-material" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
+
+# Animation
+androidx-compose-animation = { group = "androidx.compose.animation", name = "animation", version.ref = "composeAnimation" }
+
+# Material3
+material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
+material3-window = { module = "androidx.compose.material3:material3-window-size-class", version.ref = "material3-window" }
+material3-adaptive-navigation = { module = "androidx.compose.material3.adaptive:adaptive", version.ref = "material3-adaptive-navigation" }
+
+# DateTime
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+
+# Room
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-runtime-android = { module = "androidx.room:room-runtime-android", version.ref = "room" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
+
+# ViewModel
+view-model = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "view-model" }
+
+# Navigation
+navigation = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigation" }
+voyager = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyagerVersion" }
+voyager-transition = { module = "cafe.adriel.voyager:voyager-transitions", version.ref = "voyagerVersion" }
+voyager-screenm = { module = "cafe.adriel.voyager:voyager-screenmodel", version.ref = "voyagerVersion" }
+
+# Injection
+kodein-di-compose = { module = "org.kodein.di:kodein-di-framework-compose", version.ref = "kodeinDiCompose" }
+
+# Google-font
+google-font = { module = "androidx.compose.ui:ui-text-google-fonts", version.ref = "google-font" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+
+#Room
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+room = { id = "androidx.room", version.ref = "room" }
